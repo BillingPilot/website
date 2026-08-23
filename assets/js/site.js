@@ -24,7 +24,8 @@ const previousScreenshotButton = document.querySelector('.dialog-previous');
 const nextScreenshotButton = document.querySelector('.dialog-next');
 
 if (screenshotDialog && screenshotDialogImage && screenshotDialogTitle && screenshotDialogPosition && dialogCloseButton && previousScreenshotButton && nextScreenshotButton) {
-  const screenshotTriggers = Array.from(document.querySelectorAll('.screenshot-trigger')).filter((trigger, index, triggers) => (
+  const allScreenshotTriggers = Array.from(document.querySelectorAll('.screenshot-trigger'));
+  const screenshotTriggers = allScreenshotTriggers.filter((trigger, index, triggers) => (
     triggers.findIndex((candidate) => candidate.dataset.screenshotSrc === trigger.dataset.screenshotSrc) === index
   ));
   let activeScreenshotIndex = 0;
@@ -38,9 +39,9 @@ if (screenshotDialog && screenshotDialogImage && screenshotDialogTitle && screen
     screenshotDialogPosition.textContent = `Bild ${activeScreenshotIndex + 1} von ${screenshotTriggers.length}`;
   };
 
-  screenshotTriggers.forEach((trigger, index) => {
+  allScreenshotTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
-      showScreenshot(index);
+      showScreenshot(screenshotTriggers.findIndex((candidate) => candidate.dataset.screenshotSrc === trigger.dataset.screenshotSrc));
       screenshotDialog.showModal();
     });
   });
