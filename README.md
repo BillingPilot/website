@@ -22,7 +22,7 @@ Dieser Ordner enthält die eigenständige, statische öffentliche Website von Bi
 4. Die veröffentlichte Prüfsumme auf der GitHub-Release-Seite kontrollieren.
 5. Die aktualisierten Website-Dateien in das GitHub-Pages-Repository übertragen und die veröffentlichte Seite prüfen.
 
-Der aktuelle Download verweist auf `v0.7.12`. Das Release sollte in GitHub als regulärer Release, nicht als Pre-release, veröffentlicht sein.
+Der aktuelle Download verweist auf `v0.7.14`. Das Release sollte in GitHub als regulärer Release, nicht als Pre-release, veröffentlicht sein.
 
 ## Pflegehinweise
 
